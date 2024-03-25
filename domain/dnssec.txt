@@ -1,0 +1,11 @@
+DNSSEC Misconfiguration
+
+#Description
+  DNSSEC (Domain Name System Security Extensions) misconfiguration can significantly impact the integrity and authenticity of DNS data, exposing the domain to man-in-the-middle attacks, cache poisoning, and other DNS-related vulnerabilities. This vulnerability arises when DNSSEC is not correctly implemented or configured, leading to situations where the security benefits it's supposed to provide are entirely negated or severely diminished.
+
+#Recommendation
+  <> recommends promptly reviewing and verifying the DNSSEC configuration settings for your domain. This includes ensuring that DS records are correctly published in the parent zone and that DNSKEY records are properly set up and propagated. It's also crucial to regularly monitor the validity of signatures and the expiration dates of keys, implementing automatic key rollover procedures to avoid lapses in DNSSEC protection. Ensuring that all DNS servers involved in the chain of trust are configured correctly and securely is equally important.
+
+#Notes
+  During initial scans, the Information Security Analyst (ISA) identified a DNSSEC misconfiguration using the tool DNSRecon on the following hosts: [List of affected hosts]. The ISA used DNSRecon to perform zone transfers and DNS queries to identify DNSSEC implementation flaws. The tool's ability to enumerate DNS records and validate DNSSEC signatures provided clear evidence of the misconfiguration, allowing for an accurate assessment of the DNSSEC implementation's integrity and authenticity.
+
